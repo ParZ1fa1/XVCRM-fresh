@@ -1,0 +1,12 @@
+# Node modules
+node_modules/
+
+# Frontend
+frontend/node_modules/
+frontend/.next/
+
+# Backend
+backend/node_modules/
+
+# Сборка
+dist/
