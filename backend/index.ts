@@ -51,7 +51,8 @@ app.post('/api/Login', (req: Request, res: Response): void => {
         return res.status(401).json({ message: 'Неверный пароль' });
       }
 
-      const token = jwt.sign({ id: user.id }, 'secret123', { expiresIn: '1h' });
+      const secret = process.env.JWT_SECRET || 'secret';
+      const token = jwt.sign({ id: user.id }, secret, { expiresIn: '1h' });
 
       res.json({ token });
     } catch (error) {
